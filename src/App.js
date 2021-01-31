@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
-import {
-  BrowserRouter, Route, Link
-} from 'react-router-dom';
+import React, { Component } from "react";
+import "./App.css";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
-function App() {
-  return (
-    <div>
-      testing testing
-    </div>
-  );
-}
+const App = () => {
+  return <div>testing testing</div>;
+};
 
 export default App;
