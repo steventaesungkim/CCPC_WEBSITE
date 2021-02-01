@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
-import {
-  BrowserRouter, Route, Link
-} from 'react-router-dom';
+import React, { Suspense } from "react";
+import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
+import Routes from "./routes/Routes";
+
+const App = () => {
   return (
-    <div>
-      testing testing
-    </div>
+    <Router>
+      <Suspense fallback={<p>Loading...</p>}>
+        <div className="App">
+          <Routes />
+        </div>
+      </Suspense>
+    </Router>
   );
-}
+};
 
 export default App;
