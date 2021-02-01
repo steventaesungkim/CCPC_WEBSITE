@@ -1,9 +1,18 @@
-import React, { Component } from "react";
+import React, { Suspense } from "react";
 import "./App.css";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+
+// import CCPS from "./components/landing/CCPS";
+import Routes from "./components";
 
 const App = () => {
-  return <div>testing testing</div>;
+  return (
+    <Router>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Routes />
+      </Suspense>
+    </Router>
+  );
 };
 
 export default App;
