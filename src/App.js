@@ -9,7 +9,9 @@ const App = () => {
   return (
     <Router>
       <Suspense fallback={<p>Loading...</p>}>
-        <Routes />
+        <div className="App">
+          <Routes />
+        </div>
       </Suspense>
     </Router>
   );
