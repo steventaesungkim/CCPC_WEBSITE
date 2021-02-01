@@ -1,17 +1,14 @@
 html {
   box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherity;
-}
-
-html {
-  font-size: 20px;
+  /* font-size: 20px; */
   height: 100vh;
   margin: 0;
   padding: 0;
   width: 100vw;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
 }

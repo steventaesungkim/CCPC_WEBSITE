@@ -2,8 +2,7 @@ import React, { Suspense } from "react";
 import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 
-// import CCPS from "./components/landing/CCPS";
-import Routes from "./components";
+import Routes from "./routes/Routes";
 
 const App = () => {
   return (

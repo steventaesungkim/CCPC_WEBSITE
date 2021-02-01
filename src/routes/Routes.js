@@ -9,10 +9,11 @@ const Admin = lazy(() => import("../containers/admin/Admin"));
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/" exact component={CCPS} />
+      <Route exact path="/" component={CCPS} />
       <Route path="/about" component={About} />
       {/* # = special route for admin page */}
       <Route path="/#" component={Admin} />
+
       <Redirect to="/" />
     </Switch>
   );
