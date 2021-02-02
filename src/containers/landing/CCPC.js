@@ -6,7 +6,8 @@ class CCPC extends Component {
   render() {
     return (
       <>
-        <Header />
+        {/* NOTE: Need to decide where to have Header component. Since Header will only be used for the landing and about route, do not need it in the admin route.  */}
+        {/* <Header /> */}
 
         <section className="CCPC__body">
           <div className="titles">
