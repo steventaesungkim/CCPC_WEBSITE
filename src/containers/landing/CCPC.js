@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../components/header/Header";
+import Video from "../../components/videoDisplay/Video";
 
 class CCPC extends Component {
   render() {
@@ -17,7 +18,7 @@ class CCPC extends Component {
             <h3>Sub Title</h3>
           </div>
 
-          <div className="video"></div>
+          <Video />
         </section>
       </>
     );
