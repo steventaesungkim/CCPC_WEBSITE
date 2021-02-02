@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <Suspense fallback={<p>Loading...</p>}>
-        <div className="App">
+        <div className="CCPC__main">
           <Routes />
         </div>
       </Suspense>
