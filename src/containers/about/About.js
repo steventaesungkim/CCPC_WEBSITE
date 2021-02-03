@@ -9,17 +9,11 @@ class About extends Component {
           kim="Rev. Ki Kim's Bio"
           statement="Mission Statement"
           vision="Vision"
-          contact="Contacts"
+          contact="Contact Us"
         />
 
         <section className="about__container">
-          <div className="nav__title">
-            <h2>Rev. Ki Kim</h2>
-          </div>
-          <div>
-            <img />
-            <p>lorem ipsum</p>
-          </div>
+          {/* render the results from each Bodynavbar links */}
         </section>
       </>
     );
