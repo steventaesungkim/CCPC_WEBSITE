@@ -12,7 +12,7 @@ const Routes = () => {
       <Route exact path="/" component={CCPC} />
       <Route path="/about" component={About} />
       {/* # = special route for admin page */}
-      <Route path="/#" component={Admin} />
+      <Route path="/182.1.0.2019/admin" component={Admin} />
 
       <Redirect to="/" />
     </Switch>
