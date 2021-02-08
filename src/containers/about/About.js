@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import BodyNavbar from "../../components/navbar/BodyNavbar";
 
 class About extends Component {

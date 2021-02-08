@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../../components/header/Header";
+// import Header from "../../components/header/Header";
 import Video from "../../components/videoDisplay/Video";
 
 class CCPC extends Component {
@@ -12,7 +12,7 @@ class CCPC extends Component {
         <section className="CCPC__body">
           <div className="titles">
             <h5>Body Title</h5>
-            <img />
+            {/* <img /> */}
             <p>1/19/2021</p>
 
             <h1>Video Title</h1>
