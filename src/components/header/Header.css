@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  height: 15vh;
+  height: 22vh;
   width: 100vw;
   border-bottom: 3px outset lightgray;
 }
@@ -33,8 +33,8 @@
   margin: 0;
 }
 .main__title p:first-child {
-  font-size: 130%;
+  font-size: 150%;
 }
 .main__title p:last-child {
-  font-size: 100%;
+  font-size: 130%;
 }
