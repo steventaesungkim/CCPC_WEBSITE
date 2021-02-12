@@ -1,18 +1,18 @@
 import React, { lazy } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import CCPC from "../containers/landing/CCPC";
+import CCPC from "../pages/landing/CCPC";
 
-const About = lazy(() => import("../containers/about/About"));
-const Live = lazy(() => import("../containers/live/Live"));
+const About = lazy(() => import("../pages/about/About"));
+const Live = lazy(() => import("../pages/live/Live"));
 
-const Admin = lazy(() => import("../containers/admin/Admin"));
-const Bio = lazy(() => import("../containers/kimBio/Bio"));
+const Admin = lazy(() => import("../pages/admin/Admin"));
+const Bio = lazy(() => import("../pages/kimBio/Bio"));
 const MissionStatement = lazy(() =>
-  import("../containers/missionStatement/MissionStatement")
+  import("../pages/missionStatement/MissionStatement")
 );
-const Vision = lazy(() => import("../containers/vision/Vision"));
-const Contact = lazy(() => import("../containers/contact/ContactUs"));
+const Vision = lazy(() => import("../pages/vision/Vision"));
+const Contact = lazy(() => import("../pages/contact/ContactUs"));
 
 const Routes = () => {
   return (
