@@ -8,7 +8,8 @@ class Contact extends Component {
       <div className="contact__container">
         <h2>Contact Us</h2>
         <div className-="form__body">
-          <form></form>
+          <p>Helloooooo, call me please!</p>
+          {/* <form></form> */}
         </div>
       </div>
     );

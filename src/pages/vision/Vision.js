@@ -5,7 +5,7 @@ const Vision = () => {
     <div className="vision__container">
       <h2>Vision</h2>
       <div className="vision__content">
-        <p></p>
+        <p>The vision of what I see</p>
       </div>
     </div>
   );

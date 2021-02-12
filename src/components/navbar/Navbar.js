@@ -6,7 +6,7 @@ import "./Navbar.css";
 const Navbar = ({ sermons, live, about }) => {
   return (
     <div className="main__navbar">
-      <Link to="/#" className="nav__link">
+      <Link to="/" className="nav__link">
         {sermons}
       </Link>
 

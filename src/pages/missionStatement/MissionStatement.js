@@ -5,7 +5,7 @@ const MissionStatemment = () => {
     <div className="statement__container">
       <h2>Mission Statement</h2>
       <div className="statement__content">
-        <p></p>
+        <p>Something about mission statement or such</p>
       </div>
     </div>
   );
