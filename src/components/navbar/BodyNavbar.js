@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BodyNavbar = ({ kim, statement, vision, contact }) => {
+const BodyNavbar = ({ Bio, statement, vision, contact }) => {
   return (
     <section className="body__navbar">
       <Link to="/about/bio" className="navbar__title">
-        {kim}
+        {Bio}
       </Link>
       <Link to="/about/statement" className="navbar__title">
         {statement}

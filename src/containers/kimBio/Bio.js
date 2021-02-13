@@ -1,6 +1,7 @@
 import React from "react";
 
 const Bio = () => {
+  console.log("bio here")
   return (
     <div className="bio__container">
       <h2>Rev. Ki Kim</h2>
