@@ -4,12 +4,12 @@ import { Link, useRouteMatch } from "react-router-dom";
 import "./BodyNavbar.css";
 
 const BodyNavbar = ({ kim, statement, vision, contact }) => {
-  // let { url } = useRouteMatch();
+  let { url } = useRouteMatch();
 
   return (
     <section className="body__navbar">
-      {/* <Link to={`${url}/bio`} className="navbar__title"> */}
-      <Link to="/about/bio" className="navbar__title">
+      <Link to={`${url}/bio`} className="navbar__title">
+        {/* <Link to="/about/bio" className="navbar__title"> */}
         {kim}
       </Link>
       {/* <Link to={`${url}/statement`} className="navbar__title"> */}

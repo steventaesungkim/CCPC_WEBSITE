@@ -2,8 +2,7 @@ import React from "react";
 import "./Header.css";
 
 import Navbar from "../navbar/Navbar";
-// import Logo from "../../assets/CCPC_LOGO_FINAL3.jpg";
-import Logo from "../../assets/ccpc_logo.jpg";
+import Logo from "../../assets/ccpc_logo.png";
 
 const Header = () => {
   return (
