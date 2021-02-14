@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import CCPC from "../pages/landing/CCPC";
 
+// import Bio from "../pages/kimBio/Bio";
 const About = lazy(() => import("../pages/about/About"));
 const Live = lazy(() => import("../pages/live/Live"));
 
@@ -21,10 +22,10 @@ const Routes = () => {
       <Route path="/live" component={Live} />
       <Route path="/about" component={About} />
 
-      <Route exact path={"about/:bioId"} component={Bio} />
-      <Route exact path={"about/:statementId"} component={MissionStatement} />
-      <Route exact path={"about/:visionId"} component={Vision} />
-      <Route exact path={"about/:contactId"} component={Contact} />
+      <Route path={"about/bio"} component={Bio} />
+      <Route path={"about/statement"} component={MissionStatement} />
+      <Route path={"about/vision"} component={Vision} />
+      <Route path={"about/contact"} component={Contact} />
 
       {/* # = special route for admin page */}
       <Route path="/#" component={Admin} />
