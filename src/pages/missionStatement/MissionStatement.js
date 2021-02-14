@@ -1,14 +1,15 @@
 import React from "react";
+import "../../stylesheet/Styles.css";
 import "./MissionStatement.css";
 import Divider from "../../assets/Divider.png";
 
 const MissionStatemment = () => {
   return (
-    <div className="statement__container">
+    <div className="container">
       {/* NOTE: Possibly wrap H2 and img tags in another div so that divider can be same width as title */}
-      <h2>Mission Statement</h2>
+      <h2 className="sub__title">Mission Statement</h2>
       <img className="divider" src={Divider} alt="" />
-      <div className="statement__content">
+      <div className="statement__content content">
         <p>
           Magna amet est ex nisi ullamco fugiat anim. Proident anim proident
           proident veniam fugiat occaecat occaecat. Sint ipsum et incididunt

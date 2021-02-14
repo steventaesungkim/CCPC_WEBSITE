@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import "../../stylesheet/Styles.css";
 import "./Bio.css";
 import ProfilePic from "../../assets/TestProfile.png";
 import Divider from "../../assets/Divider.png";
@@ -8,11 +9,11 @@ const Bio = () => {
   // let { bioId } = useParams();
   console.log("hello");
   return (
-    <div className="bio__container">
-      <h2>Rev. Ki Kim</h2>
+    <div className="container">
+      <h2 className="sub__title">Rev. Ki Kim</h2>
       {/* <h2>{bioId}</h2> */}
       <img className="divider" src={Divider} alt="" />
-      <div className="bio__content">
+      <div className="bio__content content">
         <img className="bio__pic" src={ProfilePic} alt="" />
         <p>
           Mollit adipisicing duis consequat voluptate ipsum tempor ut. Velit

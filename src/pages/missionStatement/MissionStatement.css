@@ -1,25 +1,6 @@
-.statement__container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100vw;
-}
-.statement__container h2 {
-  font-weight: 400;
-  /* width: 100%; */
-}
-
-/* .divider {
-  margin-bottom: 25px;
-} */
-
 .statement__content {
   text-align: center;
-
-  width: 80%;
-  word-spacing: 1px;
 }
 .statement__content p {
-  margin: 0;
+  margin-top: 0;
 }
