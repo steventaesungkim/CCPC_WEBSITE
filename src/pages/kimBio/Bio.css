@@ -1,3 +1,4 @@
+/* container should be global css */
 .bio__container {
   align-items: center;
   display: flex;
@@ -5,14 +6,15 @@
   height: 100vh;
   width: 100vw;
 }
+/* maybe global as well */
 .bio__container h2 {
   font-weight: 400;
 }
-
+/* divider is global css */
 .divider {
   margin-bottom: 25px;
 }
-
+/* most of content should be global css */
 .bio__content {
   width: 80%;
   word-spacing: 1px;
