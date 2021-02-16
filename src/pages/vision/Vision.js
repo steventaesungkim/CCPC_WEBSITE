@@ -5,7 +5,7 @@ import Divider from "../../assets/Divider.png";
 
 const Vision = () => {
   return (
-    <div className="container">
+    <>
       <h2 className="sub__title">Vision</h2>
       <img className="divider" src={Divider} />
       <div className="vision__content content">
@@ -24,7 +24,7 @@ const Vision = () => {
           culpa veniam incididunt laboris sint. Laboris aliqua minim dui
         </p>
       </div>
-    </div>
+    </>
   );
 };
 

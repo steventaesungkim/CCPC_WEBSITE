@@ -5,7 +5,7 @@ import Divider from "../../assets/Divider.png";
 
 const MissionStatemment = () => {
   return (
-    <div className="container">
+    <>
       {/* NOTE: Possibly wrap H2 and img tags in another div so that divider can be same width as title */}
       <h2 className="sub__title">Mission Statement</h2>
       <img className="divider" src={Divider} alt="" />
@@ -25,7 +25,7 @@ const MissionStatemment = () => {
           incididunt officia magna duis tempor do. Culpa voluptate mollit
         </p>
       </div>
-    </div>
+    </>
   );
 };
 

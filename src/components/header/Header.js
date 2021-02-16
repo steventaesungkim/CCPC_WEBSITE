@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 
-import Navbar from "../navbar/Navbar";
+import Navbar from "../navBar/Nav.js";
 import Logo from "../../assets/ccpc_logo.png";
 
 const Header = () => {

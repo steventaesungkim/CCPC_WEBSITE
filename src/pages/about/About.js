@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-import BodyNavbar from "../../components/navbar/BodyNavbar";
+import BodyNav from "../../components/navBar/BodyNav";
 
 class About extends Component {
   render() {
     return (
       <>
-        <BodyNavbar
+        <BodyNav
           kim="Rev. Ki Kim's Bio"
           statement="Mission Statement"
           vision="Vision"
           contact="Contact Us"
         />
-
-        <section className="about__container">
-          {/* render the results from each Bodynavbar links */}
-        </section>
       </>
     );
   }
