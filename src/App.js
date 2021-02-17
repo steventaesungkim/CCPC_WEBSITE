@@ -6,6 +6,7 @@ import Routes from "./routes/Routes";
 import Header from "./components/header/Header";
 
 const App = () => {
+  console.log("hello");
   return (
     <Router>
       <div className="CCPC__main">
