@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Admin.css";
-import AdminHeader from "../../components/navigations/AdminNav";
+import AdminHeader from "../../components/headers/AdminHeader";
+import AdminNav from "../../components/navigations/AdminNav";
 
 class Admin extends Component {
   state = {};
@@ -9,6 +10,7 @@ class Admin extends Component {
     return (
       <div className="admin">
         <AdminHeader title="CCPC Admin" />
+        <AdminNav livevideo="Live Video" videocenter="Video Center" />
       </div>
     );
   }

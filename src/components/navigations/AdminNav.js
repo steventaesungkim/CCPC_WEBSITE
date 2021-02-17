@@ -1,9 +1,11 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Route, Switch, Link, useRouteMatch } from "react-route-dom";
+
+const LiveVideo = lazy(() => import("../../pages/liveVideo/LiveVideo"));
+const VideoCenter = lazy(() => import("../../pages/videoCenter/VideoCenter"));
 
 const AdminNav = ({ liveVideo, videoCenter }) => {
   let { path, url } = useRouteMatch();
-
   return (
     <>
       <section className="sidebar__nav">
@@ -14,10 +16,11 @@ const AdminNav = ({ liveVideo, videoCenter }) => {
           {videoCenter}
         </Link>
       </section>
+
       <section>
         <Switch>
-          <Route path={`${path}/livevideo`} />
-          <Route path={`${path}/videocenter`} />
+          <Route path={`${path}/livevideo`} component={LiveVideo} />
+          <Route path={`${path}/videocenter`} component={VideoCenter} />
         </Switch>
       </section>
     </>
