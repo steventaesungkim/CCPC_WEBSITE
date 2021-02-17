@@ -1,4 +1,6 @@
 import React, { lazy } from "react";
+import "../../stylesheet/Styles.css";
+import "./AdminNav.css";
 import { Route, Switch, Link, useRouteMatch } from "react-route-dom";
 
 const LiveVideo = lazy(() => import("../../pages/liveVideo/LiveVideo"));
@@ -17,7 +19,7 @@ const AdminNav = ({ liveVideo, videoCenter }) => {
         </Link>
       </section>
 
-      <section>
+      <section className="container">
         <Switch>
           <Route path={`${path}/livevideo`} component={LiveVideo} />
           <Route path={`${path}/videocenter`} component={VideoCenter} />
