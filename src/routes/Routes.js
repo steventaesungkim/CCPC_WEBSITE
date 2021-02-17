@@ -4,6 +4,7 @@ import CCPC from "../pages/landing/CCPC";
 
 const About = lazy(() => import("../pages/about/About"));
 const Live = lazy(() => import("../pages/live/Live"));
+const Admin = lazy(() => import("../pages/admin/Admin"));
 
 const Routes = () => {
   return (
@@ -11,6 +12,8 @@ const Routes = () => {
       <Route exact path="/" component={CCPC} />
       <Route path="/live" component={Live} />
       <Route path="/about" component={About} />
+
+      <Route exact path="/admin" component={Admin} />
 
       <Redirect to="/" />
     </Switch>

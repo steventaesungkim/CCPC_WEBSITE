@@ -11,8 +11,6 @@ const Contact = lazy(() => import("../../pages/contact/ContactUs"));
 
 const BodyNav = ({ kim, statement, vision, contact }) => {
   let { path, url } = useRouteMatch();
-  console.log(path, url);
-
   return (
     <>
       <section className="body__navbar">
