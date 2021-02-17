@@ -1,13 +1,12 @@
 import React from "react";
+import "../../stylesheet/Styles.css";
 import "./Header.css";
-
-import Navbar from "../navbar/Navbar";
-// import Logo from "../../assets/CCPC_LOGO_FINAL3.jpg";
-import Logo from "../../assets/ccpc_logo.jpg";
+import Navbar from "../navBar/Nav.js";
+import Logo from "../../assets/ccpc_logo.png";
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className="header sticky">
       <div className="logo__container">
         <img className="logo__image" src={Logo} alt="church logo" />
       </div>

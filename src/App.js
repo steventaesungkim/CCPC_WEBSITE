@@ -8,12 +8,12 @@ import Header from "./components/header/Header";
 const App = () => {
   return (
     <Router>
-      <Header />
-      <Suspense fallback={<p>Loading...</p>}>
-        <div className="CCPC__main">
+      <div className="CCPC__main">
+        <Header />
+        <Suspense fallback={<p>Loading...</p>}>
           <Routes />
-        </div>
-      </Suspense>
+        </Suspense>
+      </div>
     </Router>
   );
 };
