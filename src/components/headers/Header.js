@@ -1,7 +1,7 @@
 import React from "react";
 import "../../stylesheet/Styles.css";
 import "./Header.css";
-import Navbar from "../navBar/Nav.js";
+import Navbar from "../navigations/Nav.js";
 import Logo from "../../assets/ccpc_logo.png";
 
 const Header = () => {

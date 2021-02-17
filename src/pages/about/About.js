@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BodyNav from "../../components/navBar/BodyNav";
+import BodyNav from "../../components/navigations/BodyNav";
 
 class About extends Component {
   render() {
