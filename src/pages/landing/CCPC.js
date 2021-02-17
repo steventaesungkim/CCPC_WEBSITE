@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import "./CCPC.css";
 // import Header from "../../components/header/Header";
+import Divider from "../../assets/Divider.png";
 import Video from "../../components/videoDisplay/Video";
 
 class CCPC extends Component {
@@ -11,12 +13,12 @@ class CCPC extends Component {
 
         <section className="CCPC__body">
           <div className="titles">
-            <h5>Body Title</h5>
-            {/* <img /> */}
+            <h4>Previous Sermon</h4>
+            <img src={Divider} alt="" />
             <p>1/19/2021</p>
 
-            <h1>Video Title</h1>
-            <h3>Sub Title</h3>
+            <h1>"Receive the Holy Spirit"</h1>
+            <h3>John 20:21-23</h3>
           </div>
 
           <Video />
