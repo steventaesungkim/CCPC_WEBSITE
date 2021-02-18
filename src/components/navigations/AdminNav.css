@@ -1,6 +1,7 @@
 .admin__body {
   display: flex;
 }
+
 .sidebar__nav {
   background-color: rgb(117 117 117);
   display: flex;
@@ -10,21 +11,16 @@
   width: 20vw;
 }
 .sidebar__title {
-  /* color: white; */
+  align-items: center;
   color: black;
   display: flex;
-  /* justify-content: center; */
-  height: 8vh;
-  width: 100%;
-  text-decoration: none;
-  align-items: center;
-  padding-left: 8%;
   font-size: 130%;
+  height: 8vh;
+  padding-left: 8%;
+  text-decoration: none;
+  width: 100%;
 }
 
 .sidebar__title:hover {
   background-color: white;
-  /* color: black; */
-  /* height: 8vh;
-  width: 100%; */
 }
