@@ -9,15 +9,15 @@ import { Route, Switch, Link, useRouteMatch } from "react-router-dom";
 const AdminNav = ({ livevideo, videocenter, LiveVideo, VideoCenter }) => {
   let { path, url } = useRouteMatch();
   return (
-    <>
-      <section className="sidebar__nav">
+    <section className="admin__body">
+      <div className="sidebar__nav">
         <Link to={`${url}/livevideo`} className="sidebar__title">
           {livevideo}
         </Link>
         <Link to={`${url}/videocenter`} className="sidebar__title">
           {videocenter}
         </Link>
-      </section>
+      </div>
 
       <section className="container">
         <Switch>
@@ -25,7 +25,7 @@ const AdminNav = ({ livevideo, videocenter, LiveVideo, VideoCenter }) => {
           <Route path={`${path}/videocenter`} component={VideoCenter} />
         </Switch>
       </section>
-    </>
+    </section>
   );
 };
 export default AdminNav;

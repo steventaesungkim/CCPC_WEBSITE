@@ -1,3 +1,6 @@
+.admin__body {
+  display: flex;
+}
 .sidebar__nav {
   background-color: rgb(117 117 117);
   display: flex;

@@ -13,7 +13,7 @@ class Admin extends Component {
 
   render() {
     return (
-      <div className="admin">
+      <section className="admin">
         <AdminHeader title="CCPC Admin" logo={Logo} />
 
         <AdminNav
@@ -22,7 +22,7 @@ class Admin extends Component {
           LiveVideo={LiveVideo}
           VideoCenter={VideoCenter}
         />
-      </div>
+      </section>
     );
   }
 }
