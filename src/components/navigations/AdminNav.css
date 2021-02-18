@@ -1,0 +1,27 @@
+.sidebar__nav {
+  background-color: rgb(117 117 117);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 5%;
+  width: 20vw;
+}
+.sidebar__title {
+  /* color: white; */
+  color: black;
+  display: flex;
+  /* justify-content: center; */
+  height: 8vh;
+  width: 100%;
+  text-decoration: none;
+  align-items: center;
+  padding-left: 8%;
+  font-size: 130%;
+}
+
+.sidebar__title:hover {
+  background-color: white;
+  /* color: black; */
+  /* height: 8vh;
+  width: 100%; */
+}
