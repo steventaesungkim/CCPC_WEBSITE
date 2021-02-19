@@ -4,7 +4,7 @@ import Input from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
 
 class LiveVideo extends Component {
-  state = { input: "" };
+  state = { id: null };
 
   handleInput = (e) => {
     this.setState({
@@ -20,7 +20,7 @@ class LiveVideo extends Component {
 
   reset = () => {
     this.setState({
-      input: "",
+      id: null,
     });
   };
 
@@ -30,8 +30,9 @@ class LiveVideo extends Component {
         <lable>Live Video ID</lable>
         <Input
           type="text"
-          name="videoID"
-          value={this.state.input}
+          name="id"
+          value={this.state.id}
+          style={{}}
           handleInput={this.handleInput}
         />
 
