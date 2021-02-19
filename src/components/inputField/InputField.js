@@ -1,11 +1,11 @@
 import React from "react";
-
-const InputField = ({ name, value, style, handleInput }) => {
+// import "./InputField.css";
+const InputField = ({ type, name, value, style, handleInput }) => {
   return (
     <>
       <input
         className="input__field"
-        type="text"
+        type={type}
         name={name}
         value={value}
         style={style}
