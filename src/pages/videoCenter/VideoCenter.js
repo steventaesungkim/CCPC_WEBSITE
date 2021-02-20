@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Input from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
-
+import Select from "../../components/select/Select";
 class VideoCenter extends Component {
   state = {
     folderName: "",
@@ -10,6 +10,8 @@ class VideoCenter extends Component {
     videoId: null,
     editFolder: "",
     editVideo: "",
+    selectFolder: ["folder1", "folder2", "folder3"],
+    selectVideo: ["video1", "video2", "video3"],
   };
 
   handleInput = (e) => {
@@ -31,6 +33,20 @@ class VideoCenter extends Component {
       videoId: null,
       editFolder: "",
       editVideo: "",
+    });
+  };
+
+  selectFolders = () => {
+    const { selectFolder } = this.state.selectFolder;
+    return selectFolder.map((folder, i) => {
+      return <option key={i}>{folder}</option>;
+    });
+  };
+
+  selectVideos = () => {
+    const { selectVideo } = this.state.selectVideo;
+    return selectVideo.map((video, i) => {
+      return <option key={i}>{video}</option>;
     });
   };
 
@@ -59,7 +75,7 @@ class VideoCenter extends Component {
             <form>
               <label>
                 Select Folder
-                <Input />
+                <Select selectOptions={this.selectFolders} />
               </label>
               <label>
                 Title
@@ -89,7 +105,7 @@ class VideoCenter extends Component {
             <form>
               <label>
                 Select Folder
-                <Input />
+                <Select selectOptions={this.selectFolders} />
               </label>
               <label>
                 Edit Folder
@@ -113,11 +129,11 @@ class VideoCenter extends Component {
             <form>
               <label>
                 Select Folder
-                <Input />
+                <Select selectOptions={this.selectFolders} />
               </label>
               <label>
                 Select Video
-                <Input />
+                <Select selectOptions={this.selectVideos} />
               </label>
               <label>
                 Edit Video
