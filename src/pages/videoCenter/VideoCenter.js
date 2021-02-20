@@ -39,15 +39,17 @@ class VideoCenter extends Component {
       <>
         <div className="create__folder">
           <form>
-            <label>Create Folder</label>
-            <Input
-              type="text"
-              name="folderName"
-              value={this.state.folderName}
-              handleInput={this.handleInput}
-            />
+            <label>
+              Create Folder
+              <Input
+                type="text"
+                name="folderName"
+                value={this.state.folderName}
+                handleInput={this.handleInput}
+              />
+            </label>
 
-            <Button />
+            <Button text="Create Folder" style={{}} />
           </form>
         </div>
 
@@ -55,36 +57,53 @@ class VideoCenter extends Component {
           <div className="upload__video">
             <p>Upload Video</p>
             <form>
-              <label>Select Folder</label>
-              <Input />
-              <label>Title</label>
-              <Input
-                name="videoId"
-                value={this.state.videoId}
-                handleInput={this.handleInput}
-              />
-              <label>Video ID</label>
-              <Input />
+              <label>
+                Select Folder
+                <Input />
+              </label>
+              <label>
+                Title
+                <Input
+                  type="text"
+                  name="title"
+                  value={this.state.videoId}
+                  handleInput={this.handleInput}
+                />
+              </label>
+              <label>
+                Video ID
+                <Input
+                  type="text"
+                  name="videoId"
+                  value={this.state.videoId}
+                  handleInput={this.handleInput}
+                />
+              </label>
 
-              <Button />
+              <Button type="Upload" style={{}} />
             </form>
           </div>
 
           <div className="edit__folder">
             <p>Edit Folder</p>
             <form>
-              <label>Select Folder</label>
-              <Input />
-              <label>Edit Folder</label>
-              <Input
-                name="editFolder"
-                value={this.state.editFolder}
-                handleInput={this.handleInput}
-              />
+              <label>
+                Select Folder
+                <Input />
+              </label>
+              <label>
+                Edit Folder
+                <Input
+                  type="text"
+                  name="editFolder"
+                  value={this.state.editFolder}
+                  handleInput={this.handleInput}
+                />
+              </label>
 
               <div>
-                <Button />
-                <Button />
+                <Button type="Edit" style={{}} />
+                <Button type="Remove" style={{}} />
               </div>
             </form>
           </div>
@@ -92,20 +111,27 @@ class VideoCenter extends Component {
           <div className="edit__video">
             <p>Edit Video</p>
             <form>
-              <label>Select Folder</label>
-              <Input />
-              <label>Select Video</label>
-              <Input />
-              <label>Edit Video</label>
-              <Input
-                name="editVideo"
-                value={this.state.editVdieo}
-                handleInput={this.handleInput}
-              />
+              <label>
+                Select Folder
+                <Input />
+              </label>
+              <label>
+                Select Video
+                <Input />
+              </label>
+              <label>
+                Edit Video
+                <Input
+                  type="text"
+                  name="editVideo"
+                  value={this.state.editVdieo}
+                  handleInput={this.handleInput}
+                />
+              </label>
 
               <div>
-                <Button />
-                <Button />
+                <Button type="Edit" style={{}} />
+                <Button type="Remove" style={{}} />
               </div>
             </form>
           </div>

@@ -36,7 +36,7 @@ class LiveVideo extends Component {
           handleInput={this.handleInput}
         />
 
-        <Button style={{}} text="Upload" type="submit" />
+        <Button text="Upload" style={{}} />
       </form>
     );
   }
