@@ -1,5 +1,6 @@
 import React, { lazy } from "react";
 import { Route, Switch, Link, useRouteMatch } from "react-router-dom";
+import "../../stylesheet/Styles.css";
 import "./BodyNav.css";
 
 const Bio = lazy(() => import("../../pages/kimBio/Bio"));

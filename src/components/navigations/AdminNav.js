@@ -1,12 +1,12 @@
 import React, { lazy } from "react";
+import { Route, Switch, Link, useRouteMatch } from "react-router-dom";
 import "../../stylesheet/Styles.css";
 import "./AdminNav.css";
-import { Route, Switch, Link, useRouteMatch } from "react-router-dom";
 
-// const LiveVideo = lazy(() => import("../../pages/liveVideo/LiveVideo"));
-// const VideoCenter = lazy(() => import("../../pages/videoCenter/VideoCenter"));
+const LiveVideo = lazy(() => import("../../pages/liveVideo/LiveVideo"));
+const VideoCenter = lazy(() => import("../../pages/videoCenter/VideoCenter"));
 
-const AdminNav = ({ livevideo, videocenter, LiveVideo, VideoCenter }) => {
+const AdminNav = ({ livevideo, videocenter }) => {
   let { path, url } = useRouteMatch();
   return (
     <section className="admin__body">
@@ -17,6 +17,9 @@ const AdminNav = ({ livevideo, videocenter, LiveVideo, VideoCenter }) => {
         <Link to={`${url}/videocenter`} className="sidebar__title">
           {videocenter}
         </Link>
+        {/* <div className="sign__out">
+          <Link to="/login" className="">sign out</Link>
+        </div> */}
       </div>
 
       <section className="container">

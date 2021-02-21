@@ -7,3 +7,5 @@ const Button = ({ style, text }) => {
     </>
   );
 };
+
+export default Button;

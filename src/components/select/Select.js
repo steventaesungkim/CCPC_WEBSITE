@@ -7,3 +7,5 @@ const Select = ({ selectOptions }) => {
     </>
   );
 };
+
+export default Select;
