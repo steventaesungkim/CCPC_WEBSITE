@@ -1,8 +1,7 @@
 .form {
+  align-items: center;
   display: flex;
-  height: 30%;
+  height: 25%;
   justify-content: space-around;
   width: 100%;
-
-  background-color: aliceblue;
 }

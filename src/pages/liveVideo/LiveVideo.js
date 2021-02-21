@@ -24,19 +24,44 @@ class LiveVideo extends Component {
     });
   };
 
-  render() {
+  liveVideoForm = () => {
+    const inputStyle = {
+      fontSize: "75%",
+      height: "20%",
+      letterSpacing: 1,
+      paddingLeft: 10,
+      width: "35%",
+    };
+
+    const buttonStyle = {
+      alignItems: "center",
+      display: "flex",
+      fontSize: "85%",
+      height: "20%",
+      justifyContent: "center",
+      width: "10%",
+    };
+
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
-        <lable>Live Video ID</lable>
+      <>
         <Input
           type="text"
           name="id"
           value={this.state.id}
-          style={{}}
+          style={inputStyle}
           handleInput={this.handleInput}
         />
 
-        <Button text="Upload" style={{}} />
+        <Button text="Upload" style={buttonStyle} />
+      </>
+    );
+  };
+
+  render() {
+    return (
+      <form className="form" onSubmit={this.handleSubmit}>
+        <lable>Live Video ID</lable>
+        {this.liveVideoForm()}
       </form>
     );
   }
