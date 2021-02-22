@@ -3,7 +3,7 @@
   background-color: white;
   border-bottom: 3px outset lightgray;
   display: flex;
-  height: 25vh;
+  height: 20vh;
   justify-content: space-between;
 }
 .adminHeader h1 {

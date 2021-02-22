@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import "../../stylesheet/Styles.css";
 import "./LiveVideo.css";
 import Input from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
@@ -59,7 +60,7 @@ class LiveVideo extends Component {
 
   render() {
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
+      <form className="liveVideoForm" onSubmit={this.handleSubmit}>
         <lable>Live Video ID</lable>
         {this.liveVideoForm()}
       </form>

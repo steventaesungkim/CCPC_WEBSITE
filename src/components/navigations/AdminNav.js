@@ -11,7 +11,7 @@ const AdminNav = ({ livevideo, videocenter }) => {
   return (
     <section className="admin__body">
       <div className="sidebar__nav">
-        <Link to={`${url}/livevideo`} className="sidebar__title">
+        <Link to={`${url}/livevideo`} className="sidebar__title active">
           {livevideo}
         </Link>
         <Link to={`${url}/videocenter`} className="sidebar__title">
@@ -22,7 +22,7 @@ const AdminNav = ({ livevideo, videocenter }) => {
         </div> */}
       </div>
 
-      <section className="container">
+      <section className="admin__container">
         <Switch>
           <Route path={`${path}/livevideo`} component={LiveVideo} />
           <Route path={`${path}/videocenter`} component={VideoCenter} />

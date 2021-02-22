@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+// import "../../stylesheet/Styles.css";
+import "./VideoCenter.css";
 import Input from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
 import Select from "../../components/select/Select";
@@ -51,107 +52,143 @@ class VideoCenter extends Component {
   };
 
   render() {
+    const createInputStyle = {
+      fontSize: "75%",
+      height: "40%",
+      letterSpacing: 1,
+      paddingLeft: 10,
+      width: "35%",
+    };
+    const createButtonStyle = {
+      alignItems: "center",
+      display: "flex",
+      fontSize: "85%",
+      height: "40%",
+      justifyContent: "center",
+      width: "12%",
+    };
+
+    const sectionInputStyle = {
+      fontSize: "75%",
+      height: "100%",
+      letterSpacing: 1,
+      paddingLeft: 10,
+      width: "65%",
+    };
+    const sectionButtonStyle = {
+      alignItems: "center",
+      display: "flex",
+      fontSize: "85%",
+      height: "20%",
+      justifyContent: "center",
+      alignSelf: "flex-end",
+      width: "65%",
+    };
+
     return (
       <>
         <div className="create__folder">
-          <form>
+          <form className="videoCenterForm">
+            <label>Create Folder</label>
+            <Input
+              type="text"
+              name="folderName"
+              value={this.state.folderName}
+              style={createInputStyle}
+              handleInput={this.handleInput}
+            />
+
+            <Button text="Create Folder" style={createButtonStyle} />
+          </form>
+        </div>
+
+        {/* <section> */}
+        <div className="section__edits">
+          <p>Upload Video</p>
+          <form className="videoForm">
             <label>
-              Create Folder
+              Select Folder
+              <Select selectOptions={this.selectFolders} />
+            </label>
+
+            <label>
+              Title
               <Input
                 type="text"
-                name="folderName"
-                value={this.state.folderName}
+                name="title"
+                value={this.state.videoId}
+                style={sectionInputStyle}
+                handleInput={this.handleInput}
+              />
+            </label>
+            <label>
+              Video ID
+              <Input
+                type="text"
+                name="videoId"
+                value={this.state.videoId}
+                style={sectionInputStyle}
+                handleInput={this.handleInput}
+              />
+            </label>
+            <Button type="Upload" style={sectionButtonStyle} />
+          </form>
+        </div>
+
+        <div className="section__edits">
+          <p>Edit Folder</p>
+          <form className="videoForm">
+            <label>
+              Select Folder
+              <Select selectOptions={this.selectFolders} />
+            </label>
+            <label>
+              Edit Folder
+              <Input
+                type="text"
+                name="editFolder"
+                value={this.state.editFolder}
+                style={sectionInputStyle}
                 handleInput={this.handleInput}
               />
             </label>
 
-            <Button text="Create Folder" style={{}} />
+            {/* <div className="section__btn"> */}
+            <Button type="Edit" style={sectionButtonStyle} />
+            <Button type="Remove" style={sectionButtonStyle} />
+            {/* </div> */}
           </form>
         </div>
 
-        <section>
-          <div className="upload__video">
-            <p>Upload Video</p>
-            <form>
-              <label>
-                Select Folder
-                <Select selectOptions={this.selectFolders} />
-              </label>
-              <label>
-                Title
-                <Input
-                  type="text"
-                  name="title"
-                  value={this.state.videoId}
-                  handleInput={this.handleInput}
-                />
-              </label>
-              <label>
-                Video ID
-                <Input
-                  type="text"
-                  name="videoId"
-                  value={this.state.videoId}
-                  handleInput={this.handleInput}
-                />
-              </label>
+        <div className="section__edits">
+          <p>Edit Video</p>
+          <form className="videoForm">
+            <label>
+              Select Folder
+              <Select selectOptions={this.selectFolders} />
+            </label>
+            <label>
+              Select Video
+              <Select selectOptions={this.selectVideos} />
+            </label>
+            <label>
+              Edit Video
+              <Input
+                type="text"
+                name="editVideo"
+                value={this.state.editVdieo}
+                style={sectionInputStyle}
+                handleInput={this.handleInput}
+              />
+            </label>
 
-              <Button type="Upload" style={{}} />
-            </form>
-          </div>
-
-          <div className="edit__folder">
-            <p>Edit Folder</p>
-            <form>
-              <label>
-                Select Folder
-                <Select selectOptions={this.selectFolders} />
-              </label>
-              <label>
-                Edit Folder
-                <Input
-                  type="text"
-                  name="editFolder"
-                  value={this.state.editFolder}
-                  handleInput={this.handleInput}
-                />
-              </label>
-
-              <div>
-                <Button type="Edit" style={{}} />
-                <Button type="Remove" style={{}} />
-              </div>
-            </form>
-          </div>
-
-          <div className="edit__video">
-            <p>Edit Video</p>
-            <form>
-              <label>
-                Select Folder
-                <Select selectOptions={this.selectFolders} />
-              </label>
-              <label>
-                Select Video
-                <Select selectOptions={this.selectVideos} />
-              </label>
-              <label>
-                Edit Video
-                <Input
-                  type="text"
-                  name="editVideo"
-                  value={this.state.editVdieo}
-                  handleInput={this.handleInput}
-                />
-              </label>
-
-              <div>
-                <Button type="Edit" style={{}} />
-                <Button type="Remove" style={{}} />
-              </div>
-            </form>
-          </div>
-        </section>
+            {/* <div className="section__btn"> */}
+            <Button type="Edit" style={sectionButtonStyle} />
+            <Button type="Remove" style={sectionButtonStyle} />
+            {/* </div> */}
+          </form>
+        </div>
+        {/* </section> */}
       </>
     );
   }
