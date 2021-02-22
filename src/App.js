@@ -32,12 +32,12 @@ class App extends Component {
     return (
       <Router>
         <div className="CCPC__main">
-          <Route exact path={!this.state.adminPath} /> ? ({standardRoutes}) : (
-          {adminRoute})
-          {/* <Header />
+          {/* <Route exact path={!this.state.adminPath} /> ? ({standardRoutes}) : (
+          {adminRoute}) */}
+          <Header />
           <Suspense fallback={<p>Loading...</p>}>
             <Routes />
-          </Suspense> */}
+          </Suspense>
         </div>
       </Router>
     );

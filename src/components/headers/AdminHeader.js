@@ -1,15 +1,12 @@
 import React from "react";
+import "./AdminHeader.css";
 import "../../stylesheet/Styles.css";
-import ".AdminHeader.css";
-import Logo from "../../assets/ccpc_logo.png";
 
-const AdminHeader = ({ title }) => {
+const AdminHeader = ({ title, logo }) => {
   return (
-    <div className="AdminHeader sticky">
+    <div className="adminHeader sticky">
       <h1>{title}</h1>
-      <div className="logo__container">
-        <img className="logo__image" src={Logo} alt="church logo" />
-      </div>
+      <img className="logo" src={logo} alt="church logo" />
     </div>
   );
 };

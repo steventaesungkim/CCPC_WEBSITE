@@ -1,17 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, lazy } from "react";
 import "./Admin.css";
 import AdminHeader from "../../components/headers/AdminHeader";
 import AdminNav from "../../components/navigations/AdminNav";
+import Logo from "../../assets/ccpc_logo.png";
 
 class Admin extends Component {
   state = {};
 
   render() {
     return (
-      <div className="admin">
-        <AdminHeader title="CCPC Admin" />
+      <section className="admin">
+        <AdminHeader title="CCPC Admin" logo={Logo} />
+
         <AdminNav livevideo="Live Video" videocenter="Video Center" />
-      </div>
+      </section>
     );
   }
 }

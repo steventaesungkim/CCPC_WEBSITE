@@ -1,31 +1,34 @@
 import React, { lazy } from "react";
+import { Route, Switch, Link, useRouteMatch } from "react-router-dom";
 import "../../stylesheet/Styles.css";
 import "./AdminNav.css";
-import { Route, Switch, Link, useRouteMatch } from "react-route-dom";
 
 const LiveVideo = lazy(() => import("../../pages/liveVideo/LiveVideo"));
 const VideoCenter = lazy(() => import("../../pages/videoCenter/VideoCenter"));
 
-const AdminNav = ({ liveVideo, videoCenter }) => {
+const AdminNav = ({ livevideo, videocenter }) => {
   let { path, url } = useRouteMatch();
   return (
-    <>
-      <section className="sidebar__nav">
-        <Link to={`${url}/livevideo`} className="sidebar__title">
-          {liveVideo}
+    <section className="admin__body">
+      <div className="sidebar__nav">
+        <Link to={`${url}/livevideo`} className="sidebar__title active">
+          {livevideo}
         </Link>
         <Link to={`${url}/videocenter`} className="sidebar__title">
-          {videoCenter}
+          {videocenter}
         </Link>
-      </section>
+        {/* <div className="sign__out">
+          <Link to="/login" className="">sign out</Link>
+        </div> */}
+      </div>
 
-      <section className="container">
+      <section className="admin__container">
         <Switch>
           <Route path={`${path}/livevideo`} component={LiveVideo} />
           <Route path={`${path}/videocenter`} component={VideoCenter} />
         </Switch>
       </section>
-    </>
+    </section>
   );
 };
 export default AdminNav;
