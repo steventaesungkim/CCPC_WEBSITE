@@ -34,7 +34,7 @@ class App extends Component {
         <div className="CCPC__main">
           {/* <Route exact path={!this.state.adminPath} /> ? ({standardRoutes}) : (
           {adminRoute}) */}
-          <Header />
+          {/* <Header /> */}
           <Suspense fallback={<p>Loading...</p>}>
             <Routes />
           </Suspense>

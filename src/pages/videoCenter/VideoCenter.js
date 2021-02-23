@@ -23,6 +23,7 @@ class VideoCenter extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log(`handleSubmit:`, e);
     // Does something here and submits to backend..
     this.reset();
   };
@@ -39,6 +40,7 @@ class VideoCenter extends Component {
 
   selectFolders = () => {
     const { selectFolder } = this.state.selectFolder;
+    console.log(`SELECTFOLDER METHOD:`, selectFolder);
     return selectFolder.map((folder, i) => {
       return <option key={i}>{folder}</option>;
     });
@@ -52,6 +54,7 @@ class VideoCenter extends Component {
   };
 
   render() {
+    console.log(this.state.selectFolder);
     const createInputStyle = {
       fontSize: "75%",
       height: "40%",
@@ -59,7 +62,7 @@ class VideoCenter extends Component {
       paddingLeft: 10,
       width: "35%",
     };
-    const createButtonStyle = {
+    const createBtnStyle = {
       alignItems: "center",
       display: "flex",
       fontSize: "85%",
@@ -75,7 +78,7 @@ class VideoCenter extends Component {
       paddingLeft: 10,
       width: "65%",
     };
-    const sectionButtonStyle = {
+    const uploadBtnStyle = {
       alignItems: "center",
       display: "flex",
       fontSize: "85%",
@@ -83,6 +86,15 @@ class VideoCenter extends Component {
       justifyContent: "center",
       alignSelf: "flex-end",
       width: "65%",
+    };
+    const editRemoveBtnStyle = {
+      alignItems: "center",
+      display: "flex",
+      fontSize: "85%",
+      height: "100%",
+      justifyContent: "center",
+      fontSize: "85%",
+      width: "45%",
     };
 
     return (
@@ -98,7 +110,7 @@ class VideoCenter extends Component {
               handleInput={this.handleInput}
             />
 
-            <Button text="Create Folder" style={createButtonStyle} />
+            <Button text="Create Folder" style={createBtnStyle} />
           </form>
         </div>
 
@@ -131,7 +143,7 @@ class VideoCenter extends Component {
                 handleInput={this.handleInput}
               />
             </label>
-            <Button type="Upload" style={sectionButtonStyle} />
+            <Button text="Upload" style={uploadBtnStyle} />
           </form>
         </div>
 
@@ -153,10 +165,10 @@ class VideoCenter extends Component {
               />
             </label>
 
-            {/* <div className="section__btn"> */}
-            <Button type="Edit" style={sectionButtonStyle} />
-            <Button type="Remove" style={sectionButtonStyle} />
-            {/* </div> */}
+            <div className="btn__container">
+              <Button text="Edit" style={editRemoveBtnStyle} />
+              <Button text="Remove" style={editRemoveBtnStyle} />
+            </div>
           </form>
         </div>
 
@@ -182,10 +194,10 @@ class VideoCenter extends Component {
               />
             </label>
 
-            {/* <div className="section__btn"> */}
-            <Button type="Edit" style={sectionButtonStyle} />
-            <Button type="Remove" style={sectionButtonStyle} />
-            {/* </div> */}
+            <div className="btn__container">
+              <Button text="Edit" style={editRemoveBtnStyle} />
+              <Button text="Remove" style={editRemoveBtnStyle} />
+            </div>
           </form>
         </div>
         {/* </section> */}
