@@ -3,17 +3,23 @@ import React, { Component } from "react";
 import "./VideoCenter.css";
 import Input from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
-import Select from "../../components/select/Select";
+import DropDown from "../../components/dropDown/DropDown";
+
 class VideoCenter extends Component {
   state = {
     folderName: "",
     title: "",
-    videoId: null,
+    videoId: "",
     editFolder: "",
     editVideo: "",
-    selectFolder: ["folder1", "folder2", "folder3"],
+    defaultOption: "select option",
+    selectFolders: ["select option", "folder1", "folder2", "folder3"],
     selectVideo: ["video1", "video2", "video3"],
   };
+
+  // componentDidMount() {
+  //   // this.selectFolders();
+  // }
 
   handleInput = (e) => {
     this.setState({
@@ -23,7 +29,12 @@ class VideoCenter extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`handleSubmit:`, e);
+    console.log(
+      `Submit:`,
+      this.state.defaultOption,
+      this.state.title,
+      this.state.videoId
+    );
     // Does something here and submits to backend..
     this.reset();
   };
@@ -32,29 +43,20 @@ class VideoCenter extends Component {
     this.setState({
       folderName: "",
       title: "",
-      videoId: null,
+      videoId: "",
       editFolder: "",
       editVideo: "",
     });
   };
 
-  selectFolders = () => {
-    const { selectFolder } = this.state.selectFolder;
-    console.log(`SELECTFOLDER METHOD:`, selectFolder);
-    return selectFolder.map((folder, i) => {
-      return <option key={i}>{folder}</option>;
-    });
-  };
-
-  selectVideos = () => {
-    const { selectVideo } = this.state.selectVideo;
-    return selectVideo.map((video, i) => {
-      return <option key={i}>{video}</option>;
+  handleOptions = (e) => {
+    console.log(e.target.value);
+    this.setState({
+      defaultOption: e.target.value,
     });
   };
 
   render() {
-    console.log(this.state.selectFolder);
     const createInputStyle = {
       fontSize: "75%",
       height: "40%",
@@ -97,10 +99,12 @@ class VideoCenter extends Component {
       width: "45%",
     };
 
+    const { defaultOption, selectFolders } = this.state;
+
     return (
       <>
         <div className="create__folder">
-          <form className="videoCenterForm">
+          <form className="videoCenterForm" onSubmit={this.handleSubmit}>
             <label>Create Folder</label>
             <Input
               type="text"
@@ -114,13 +118,26 @@ class VideoCenter extends Component {
           </form>
         </div>
 
-        {/* <section> */}
         <div className="section__edits">
           <p>Upload Video</p>
-          <form className="videoForm">
+          <form className="videoForm" onSubmit={this.handleSubmit}>
             <label>
               Select Folder
-              <Select selectOptions={this.selectFolders} />
+              <select value={defaultOption} onChange={this.handleOptions}>
+                {selectFolders.map((folder, i) => {
+                  return (
+                    <option value={folder} key={i}>
+                      {folder}
+                    </option>
+                  );
+                })}
+              </select>
+              {/* <DropDown
+                value={defaultOption}
+                handleOptions={this.handleOptions}
+                folder={this.selectFolders}
+                // folder={this.state.selectFolder}
+              /> */}
             </label>
 
             <label>
@@ -128,7 +145,7 @@ class VideoCenter extends Component {
               <Input
                 type="text"
                 name="title"
-                value={this.state.videoId}
+                value={this.state.title}
                 style={sectionInputStyle}
                 handleInput={this.handleInput}
               />
@@ -147,12 +164,15 @@ class VideoCenter extends Component {
           </form>
         </div>
 
-        <div className="section__edits">
+        {/* <div className="section__edits">
           <p>Edit Folder</p>
-          <form className="videoForm">
+          <form className="videoForm" onSubmit={this.handleSubmit}>
             <label>
               Select Folder
-              <Select selectOptions={this.selectFolders} />
+              <DropDown
+                value={defaultOption}
+                handleOptions={this.handleOptions}
+              />
             </label>
             <label>
               Edit Folder
@@ -174,14 +194,20 @@ class VideoCenter extends Component {
 
         <div className="section__edits">
           <p>Edit Video</p>
-          <form className="videoForm">
+          <form className="videoForm" onSubmit={this.handleSubmit}>
             <label>
               Select Folder
-              <Select selectOptions={this.selectFolders} />
+              <DropDown
+                value={defaultOption}
+                handleOptions={this.handleOptions}
+              />
             </label>
             <label>
               Select Video
-              <Select selectOptions={this.selectVideos} />
+              <DropDown
+                value={defaultOption}
+                handleOptions={this.handleOptions}
+              />
             </label>
             <label>
               Edit Video
@@ -199,11 +225,29 @@ class VideoCenter extends Component {
               <Button text="Remove" style={editRemoveBtnStyle} />
             </div>
           </form>
-        </div>
-        {/* </section> */}
+        </div> */}
       </>
     );
   }
+
+  // selectFolders = () => {
+  //   const { selectFolder } = this.state.selectFolder;
+  //   console.log(`SELECTFOLDER METHOD:`, selectFolder);
+  //   selectFolder.map((folder, i) => {
+  //     return (
+  //       <option value={folder} key={i}>
+  //         {folder}
+  //       </option>
+  //     );
+  //   });
+  // };
+
+  // selectVideos = () => {
+  //   const { selectVideo } = this.state.selectVideo;
+  //   return selectVideo.map((video, i) => {
+  //     return <option key={i}>{video}</option>;
+  //   });
+  // };
 }
 
 export default VideoCenter;
