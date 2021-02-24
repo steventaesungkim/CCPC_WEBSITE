@@ -14,12 +14,8 @@ class VideoCenter extends Component {
     editVideo: "",
     defaultOption: "select option",
     selectFolders: ["select option", "folder1", "folder2", "folder3"],
-    selectVideo: ["video1", "video2", "video3"],
+    selectVideos: ["video1", "video2", "video3"],
   };
-
-  // componentDidMount() {
-  //   // this.selectFolders();
-  // }
 
   handleInput = (e) => {
     this.setState({
@@ -46,6 +42,7 @@ class VideoCenter extends Component {
       videoId: "",
       editFolder: "",
       editVideo: "",
+      defaultOption: "select option",
     });
   };
 
@@ -99,7 +96,7 @@ class VideoCenter extends Component {
       width: "45%",
     };
 
-    const { defaultOption, selectFolders } = this.state;
+    const { defaultOption, selectFolders, selectVideos } = this.state;
 
     return (
       <>
@@ -123,21 +120,11 @@ class VideoCenter extends Component {
           <form className="videoForm" onSubmit={this.handleSubmit}>
             <label>
               Select Folder
-              <select value={defaultOption} onChange={this.handleOptions}>
-                {selectFolders.map((folder, i) => {
-                  return (
-                    <option value={folder} key={i}>
-                      {folder}
-                    </option>
-                  );
-                })}
-              </select>
-              {/* <DropDown
-                value={defaultOption}
+              <DropDown
+                defaultOption={defaultOption}
                 handleOptions={this.handleOptions}
-                folder={this.selectFolders}
-                // folder={this.state.selectFolder}
-              /> */}
+                selectFolders={selectFolders}
+              />
             </label>
 
             <label>
@@ -170,8 +157,9 @@ class VideoCenter extends Component {
             <label>
               Select Folder
               <DropDown
-                value={defaultOption}
+                defaultOption={defaultOption}
                 handleOptions={this.handleOptions}
+                selectFolders={selectFolders}
               />
             </label>
             <label>
@@ -198,15 +186,17 @@ class VideoCenter extends Component {
             <label>
               Select Folder
               <DropDown
-                value={defaultOption}
+                defaultOption={defaultOption}
                 handleOptions={this.handleOptions}
+                selectFolders={selectFolders}
               />
             </label>
             <label>
               Select Video
               <DropDown
-                value={defaultOption}
+                defaultOption={defaultOption}
                 handleOptions={this.handleOptions}
+                selectVideos={selectVideos}
               />
             </label>
             <label>

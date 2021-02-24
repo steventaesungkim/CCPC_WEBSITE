@@ -1,11 +1,16 @@
 import React from "react";
 
-const DropDown = ({ value, handleOptions, folder }) => {
-  console.log(`Folder: `, folder);
+const DropDown = ({ defaultOption, handleOptions, selectFolders }) => {
   return (
     <>
-      <select value={value} onChange={handleOptions}>
-        {folder}
+      <select value={defaultOption} onChange={handleOptions}>
+        {selectFolders.map((folder, i) => {
+          return (
+            <option value={folder} key={i}>
+              {folder}
+            </option>
+          );
+        })}
       </select>
     </>
   );
