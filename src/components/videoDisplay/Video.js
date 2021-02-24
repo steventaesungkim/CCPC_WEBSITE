@@ -12,7 +12,7 @@ class Video extends Component {
           width="1000px"
           height="500px"
           allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen="true"
+          // allowFullScreen="true"
           title="Keyboard Cat"
         />
       </div>
