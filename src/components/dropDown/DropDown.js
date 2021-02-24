@@ -2,19 +2,17 @@ import React from "react";
 import "./DropDown.css";
 
 const DropDown = ({
-  defaultOption,
+  defaultValue,
   handleOptions,
   selectFolders,
-  selectVideos,
   isDisabled,
-  text,
 }) => {
-  console.log(defaultOption, selectFolders, text, isDisabled);
+  console.log(defaultValue, selectFolders, isDisabled);
   return (
     <>
       <select
         className="dropdown"
-        defaultValue={defaultOption}
+        defaultValue={defaultValue}
         onChange={handleOptions}
         disabled={isDisabled}
       >

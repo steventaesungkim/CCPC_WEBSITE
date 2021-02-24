@@ -12,10 +12,11 @@ class VideoCenter extends Component {
     videoId: "",
     editFolder: "",
     editVideo: "",
-    defaultOption: "selected option",
-    selectFolders: ["select option", "folder1", "folder2", "folder3"],
-    selectVideos: ["video1", "video2", "video3"],
+    defaultOption: "select folder",
+    selectFolders: ["select folder", "folder1", "folder2", "folder3"],
+    selectVideos: ["select video", "video1", "video2", "video3"],
     isDisabled: true,
+    defaultOpt: "select folder",
   };
 
   handleInput = (e) => {
@@ -43,7 +44,9 @@ class VideoCenter extends Component {
       videoId: "",
       editFolder: "",
       editVideo: "",
-      defaultOption: "select option",
+      defaultOption: "select folder",
+      isDisabled: true,
+      defaultOpt: "select folder",
     });
   };
 
@@ -51,6 +54,14 @@ class VideoCenter extends Component {
     console.log(`OPTIONS: `, e.target.value);
     this.setState({
       defaultOption: e.target.value,
+      // isDisabled: false,
+    });
+  };
+
+  changeOption = (e) => {
+    console.log(`OTHER OPTION:`, e.target.value);
+    this.setState({
+      defaultOpt: e.target.value,
       isDisabled: false,
     });
   };
@@ -86,7 +97,8 @@ class VideoCenter extends Component {
     const createBtnStyle = {
       alignItems: "center",
       display: "flex",
-      fontSize: "85%",
+      fontSize: "75%",
+      fontWeight: "700",
       height: "40%",
       justifyContent: "center",
       width: "12%",
@@ -102,7 +114,8 @@ class VideoCenter extends Component {
     const uploadBtnStyle = {
       alignItems: "center",
       display: "flex",
-      fontSize: "85%",
+      fontSize: "75%",
+      fontWeight: "700",
       height: "20%",
       justifyContent: "center",
       alignSelf: "flex-end",
@@ -114,12 +127,19 @@ class VideoCenter extends Component {
       fontSize: "85%",
       height: "100%",
       justifyContent: "center",
-      fontSize: "85%",
+      fontSize: "75%",
+      fontWeight: "700",
       width: "45%",
     };
 
-    const { defaultOption, selectFolders, selectVideos } = this.state;
-    console.log(defaultOption, selectFolders, selectVideos);
+    const {
+      defaultOption,
+      selectFolders,
+      selectVideos,
+      defaultOpt,
+      isDisabled,
+    } = this.state;
+    console.log(defaultOption, selectFolders, selectVideos, defaultOpt);
 
     return (
       <>
@@ -137,8 +157,7 @@ class VideoCenter extends Component {
             <label>
               Select Folder
               <DropDown
-                text="SELECT FOLDER"
-                defaultOption={defaultOption}
+                defaultValue={defaultOption}
                 handleOptions={this.handleOptions}
                 selectFolders={selectFolders}
               />
@@ -167,14 +186,13 @@ class VideoCenter extends Component {
           </form>
         </div>
 
-        {/* <div className="section__edits">
+        <div className="section__edits">
           <p>Edit Folder</p>
           <form className="videoForm" onSubmit={this.handleSubmit}>
             <label>
               Select Folder
               <DropDown
-                text="SELECT FOLDER"
-                defaultOption={defaultOption}
+                defaultValue={defaultOption}
                 handleOptions={this.handleOptions}
                 selectFolders={selectFolders}
               />
@@ -195,7 +213,7 @@ class VideoCenter extends Component {
               <Button text="Remove" style={editRemoveBtnStyle} />
             </div>
           </form>
-        </div> */}
+        </div>
 
         <div className="section__edits">
           <p>Edit Video</p>
@@ -203,22 +221,19 @@ class VideoCenter extends Component {
             <label>
               Select Folder
               <DropDown
-                text="SELECT FOLDER"
-                defaultOption={defaultOption}
-                handleOptions={this.handleOptions}
+                defaultValue={defaultOption}
+                handleOptions={this.changeOption}
                 selectFolders={selectFolders}
               />
             </label>
-            {defaultOption ? (
+            {defaultOpt ? (
               <label>
                 Select Video
                 <DropDown
-                  text="SELECT VIDEO"
-                  defaultOption={defaultOption}
-                  handleOptions={this.handleOptions}
-                  // selectVideos={selectVideos}
-                  selectFolders={selectFolders}
-                  isDisabled={this.state.isDisabled}
+                  defaultValue={defaultOpt}
+                  handleOptions={this.changeOption}
+                  selectFolders={selectVideos}
+                  isDisabled={isDisabled}
                 />
               </label>
             ) : null}
