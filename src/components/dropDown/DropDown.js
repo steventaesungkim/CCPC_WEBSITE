@@ -1,9 +1,23 @@
 import React from "react";
+import "./DropDown.css";
 
-const DropDown = ({ defaultOption, handleOptions, selectFolders }) => {
+const DropDown = ({
+  defaultOption,
+  handleOptions,
+  selectFolders,
+  selectVideos,
+  isDisabled,
+  text,
+}) => {
+  console.log(defaultOption, selectFolders, text, isDisabled);
   return (
     <>
-      <select value={defaultOption} onChange={handleOptions}>
+      <select
+        className="dropdown"
+        defaultValue={defaultOption}
+        onChange={handleOptions}
+        disabled={isDisabled}
+      >
         {selectFolders.map((folder, i) => {
           return (
             <option value={folder} key={i}>

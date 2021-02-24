@@ -12,9 +12,10 @@ class VideoCenter extends Component {
     videoId: "",
     editFolder: "",
     editVideo: "",
-    defaultOption: "select option",
+    defaultOption: "selected option",
     selectFolders: ["select option", "folder1", "folder2", "folder3"],
     selectVideos: ["video1", "video2", "video3"],
+    isDisabled: true,
   };
 
   handleInput = (e) => {
@@ -47,13 +48,15 @@ class VideoCenter extends Component {
   };
 
   handleOptions = (e) => {
-    console.log(e.target.value);
+    console.log(`OPTIONS: `, e.target.value);
     this.setState({
       defaultOption: e.target.value,
+      isDisabled: false,
     });
   };
 
-  render() {
+  // THIS IS FOR FUTURE REFERENCE TO SEE IF I CAN APPLY DRY METHOD...
+  createFolderInput = () => {
     const createInputStyle = {
       fontSize: "75%",
       height: "40%",
@@ -61,6 +64,25 @@ class VideoCenter extends Component {
       paddingLeft: 10,
       width: "35%",
     };
+    return (
+      <Input
+        type="text"
+        name="folderName"
+        value={this.state.folderName}
+        style={createInputStyle}
+        handleInput={this.handleInput}
+      />
+    );
+  };
+
+  render() {
+    // const createInputStyle = {
+    //   fontSize: "75%",
+    //   height: "40%",
+    //   letterSpacing: 1,
+    //   paddingLeft: 10,
+    //   width: "35%",
+    // };
     const createBtnStyle = {
       alignItems: "center",
       display: "flex",
@@ -97,20 +119,14 @@ class VideoCenter extends Component {
     };
 
     const { defaultOption, selectFolders, selectVideos } = this.state;
+    console.log(defaultOption, selectFolders, selectVideos);
 
     return (
       <>
         <div className="create__folder">
           <form className="videoCenterForm" onSubmit={this.handleSubmit}>
             <label>Create Folder</label>
-            <Input
-              type="text"
-              name="folderName"
-              value={this.state.folderName}
-              style={createInputStyle}
-              handleInput={this.handleInput}
-            />
-
+            {this.createFolderInput()}
             <Button text="Create Folder" style={createBtnStyle} />
           </form>
         </div>
@@ -121,12 +137,12 @@ class VideoCenter extends Component {
             <label>
               Select Folder
               <DropDown
+                text="SELECT FOLDER"
                 defaultOption={defaultOption}
                 handleOptions={this.handleOptions}
                 selectFolders={selectFolders}
               />
             </label>
-
             <label>
               Title
               <Input
@@ -157,6 +173,7 @@ class VideoCenter extends Component {
             <label>
               Select Folder
               <DropDown
+                text="SELECT FOLDER"
                 defaultOption={defaultOption}
                 handleOptions={this.handleOptions}
                 selectFolders={selectFolders}
@@ -178,7 +195,7 @@ class VideoCenter extends Component {
               <Button text="Remove" style={editRemoveBtnStyle} />
             </div>
           </form>
-        </div>
+        </div> */}
 
         <div className="section__edits">
           <p>Edit Video</p>
@@ -186,19 +203,25 @@ class VideoCenter extends Component {
             <label>
               Select Folder
               <DropDown
+                text="SELECT FOLDER"
                 defaultOption={defaultOption}
                 handleOptions={this.handleOptions}
                 selectFolders={selectFolders}
               />
             </label>
-            <label>
-              Select Video
-              <DropDown
-                defaultOption={defaultOption}
-                handleOptions={this.handleOptions}
-                selectVideos={selectVideos}
-              />
-            </label>
+            {defaultOption ? (
+              <label>
+                Select Video
+                <DropDown
+                  text="SELECT VIDEO"
+                  defaultOption={defaultOption}
+                  handleOptions={this.handleOptions}
+                  // selectVideos={selectVideos}
+                  selectFolders={selectFolders}
+                  isDisabled={this.state.isDisabled}
+                />
+              </label>
+            ) : null}
             <label>
               Edit Video
               <Input
@@ -209,35 +232,15 @@ class VideoCenter extends Component {
                 handleInput={this.handleInput}
               />
             </label>
-
             <div className="btn__container">
               <Button text="Edit" style={editRemoveBtnStyle} />
               <Button text="Remove" style={editRemoveBtnStyle} />
             </div>
           </form>
-        </div> */}
+        </div>
       </>
     );
   }
-
-  // selectFolders = () => {
-  //   const { selectFolder } = this.state.selectFolder;
-  //   console.log(`SELECTFOLDER METHOD:`, selectFolder);
-  //   selectFolder.map((folder, i) => {
-  //     return (
-  //       <option value={folder} key={i}>
-  //         {folder}
-  //       </option>
-  //     );
-  //   });
-  // };
-
-  // selectVideos = () => {
-  //   const { selectVideo } = this.state.selectVideo;
-  //   return selectVideo.map((video, i) => {
-  //     return <option key={i}>{video}</option>;
-  //   });
-  // };
 }
 
 export default VideoCenter;
