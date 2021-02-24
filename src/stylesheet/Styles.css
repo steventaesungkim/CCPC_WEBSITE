@@ -12,7 +12,7 @@ code {
 }
 
 /* ======================================== */
-/* ======================================== */
+/* === STICKY TOP NAV === */
 .sticky {
   left: 0;
   overflow: hidden;
@@ -21,23 +21,36 @@ code {
   z-index: 1;
 }
 
-/* CURRENT DIVIDER IMAGE CSS */
+/* ===== LOGO ===== */
+.logo__container {
+  align-items: center;
+  display: flex;
+  height: 15vh;
+  justify-content: flex-end;
+  padding: 0 10px 20px 0;
+  width: 10vw;
+}
+.logo__image {
+  height: 12vh;
+  width: auto;
+}
+
+/* === DIVIDER IMAGE CSS === */
 .divider {
   margin-bottom: 25px;
 }
 
-/* STATIC PAGES CSS */
+/* === STATIC PAGES CSS === */
 .container {
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
 }
 .content {
   width: 80%;
   word-spacing: 1px;
 }
-
 .sub__title {
   font-weight: 400;
 }

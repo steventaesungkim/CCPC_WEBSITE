@@ -1,7 +1,11 @@
 import React from "react";
 import "../../stylesheet/Styles.css";
 import "./Header.css";
+<<<<<<< HEAD:src/components/header/Header.js
 import Navbar from "../navbar/Nav.js";
+=======
+import Navbar from "../navigations/Nav.js";
+>>>>>>> 954d61db2025d8c1a65c79e5f74eceb64826f602:src/components/headers/Header.js
 import Logo from "../../assets/ccpc_logo.png";
 
 const Header = () => {

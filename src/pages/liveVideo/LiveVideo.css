@@ -1,0 +1,7 @@
+.liveVideoForm {
+  align-items: center;
+  display: flex;
+  height: 25%;
+  justify-content: space-around;
+  width: 100%;
+}
