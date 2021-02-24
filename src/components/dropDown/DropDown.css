@@ -1,0 +1,13 @@
+.dropdown {
+  align-items: center;
+  display: flex;
+  font-size: 80%;
+  height: 100%;
+  justify-content: center;
+  letter-spacing: 1px;
+  padding-left: 9px;
+  width: 65%;
+}
+
+/* .dropdown option {
+} */

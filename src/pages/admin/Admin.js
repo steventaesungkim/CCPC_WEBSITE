@@ -1,4 +1,4 @@
-import React, { Component, lazy } from "react";
+import React, { Component } from "react";
 import "./Admin.css";
 import AdminHeader from "../../components/headers/AdminHeader";
 import AdminNav from "../../components/navigations/AdminNav";
